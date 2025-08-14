@@ -16,7 +16,7 @@ SHOTS=16
 DIR=output/base2new/train_base/${DATASET}/shots_${SHOTS}/${TRAINER}/${CFG}/seed${SEED}
 if [ -d "$DIR" ]; then
     echo "Results are available in ${DIR}. Resuming..."
-    srun -p mineru4s --gres=gpu:1 --cpus-per-task=10 --job-name=HiCroPL_training -u python train.py \
+    python train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \
@@ -27,7 +27,7 @@ if [ -d "$DIR" ]; then
     DATASET.SUBSAMPLE_CLASSES base
 else
     echo "Run this job and save the output to ${DIR}"
-    srun -p mineru4s --gres=gpu:1 --cpus-per-task=10 --job-name=HiCroPL_training -u python train.py \
+    python train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \

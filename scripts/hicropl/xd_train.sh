@@ -18,7 +18,7 @@ if [ -d "$DIR" ]; then
 else
     echo "Run this job and save the output to ${DIR}"
 
-    srun -p mineru4s --gres=gpu:1 --cpus-per-task=10 --job-name=HiCroPL_training -u python train.py \
+    python train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \

@@ -26,7 +26,7 @@ if [ -d "$DIR" ]; then
     echo "Evaluating model"
     echo "Results are available in ${DIR}. Resuming..."
 
-    srun -p mineru4s --gres=gpu:1 --cpus-per-task=10 --job-name=HiCroPL_training -u python train.py \
+    python train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \
@@ -42,7 +42,7 @@ else
     echo "Evaluating model"
     echo "Runing the first phase job and save the output to ${DIR}"
 
-    srun -p mineru4s --gres=gpu:1 --cpus-per-task=10 --job-name=HiCroPL_training -u python train.py \
+    python train.py \
     --root ${DATA} \
     --seed ${SEED} \
     --trainer ${TRAINER} \
