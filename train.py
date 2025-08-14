@@ -25,7 +25,6 @@ import datasets.imagenet_r
 
 import trainers.coop
 import trainers.cocoop
-import trainers.zsclip_cupl
 import trainers.maple
 import trainers.independentVL
 import trainers.promptsrc
