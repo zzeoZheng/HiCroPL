@@ -1,24 +1,24 @@
 # Hierarchical Cross-modal Prompt Learning for Vision-Language Models [ICCV 2025]
 
-This is the official implementation of the paper " [Hierarchical Cross-modal Prompt Learning for Vision-Language Models](https://arxiv.org/pdf/2507.14976)".
-
-Authors: Hao Zheng, Shunzhi Yang, Zhuoxin He, Jinfeng Yang, Zhenhua Huang
+> This is the official implementation of the paper " [Hierarchical Cross-modal Prompt Learning for Vision-Language Models](https://arxiv.org/pdf/2507.14976)".
+>
+> Authors: Hao Zheng, Shunzhi Yang, Zhuoxin He, Jinfeng Yang, Zhenhua Huang
 
 ------
 
-### Highlights
+## Highlights
 
-> **Abstract:** Pre-trained Vision-Language Models (VLMs) such as CLIP have shown excellent generalization abilities. However, adapting these large-scale models to downstream tasks while preserving their generalization capabilities remains challenging. Although prompt learning methods have shown promise, they suffer from two fundamental bottlenecks that limit generalization: (a) modality isolation, and (b) hierarchical semantic decay. To address these limitations, we propose HiCroPL, a Hierarchical Crossmodal Prompt Learning framework that establishes bidirectional knowledge flow between text and vision modalities, enabling them to refine their semantics mutually. HiCroPL routes knowledge flows by leveraging the complementary strengths of text and vision. In early layers, text prompts inject relatively clear semantics into visual prompts through a hierarchical knowledge mapper, enhancing the representation of low-level visual semantics. In later layers, visual prompts encoding specific task-relevant objects flow back to refine text prompts, enabling deeper alignment. Crucially, our hierarchical knowledge mapper allows representations at multi-scales to be fused, ensuring that deeper representations retain transferable shallow semantics thereby enhancing generalization. We further introduce a lightweight layer-specific knowledge proxy to enable efficient cross-modal interactions. Extensive evaluations across four tasks demonstrate HiCroPL’s superior performance, achieving state-of-the-art results on 11 benchmarks with significant improvements.
-
-![motivation](docs/motivation.png)
+![motivation](/Users/zeo/郑浩/论文/ICCV2025/motivation.png)
 
 *Figure 1. Comparison of HiCroPL with existing prompting approaches. (a) Most existing methods adopt uni-modal adaptation or isolated multi-modal solutions to fine-tune CLIP. (b) Multi-modal Prompt Learning (MaPLe) proposes a one way (i.e. text-to-vision) coupling function to bridge the two modalities, but visual concepts lack pathways to guide textual semantics. (c) HiCroPL introduces a bidirectional knowledge flow mechanism between the two modalities, enabling them to refine their semantics mutually for deep alignment. Besides, the representation used for downstream decisions contains rich intermediate features for improved generalization.*
 
-![framework_final](docs/framework_final.png)
+![framework_final](/Users/zeo/郑浩/论文/ICCV2025/framework_final.png)
 
 *Figure 2. (a) Overview of the proposed HiCroPL framework. (b) Detailed illustration of the Bidirectional Knowledge flow mechanism. From Layer 1 to k, the LKP first initializes layer-specific proxy tokens to encapsulate the key information relevant to the current layer, which then guide visual prompt refinement via the mapper M. The reverse flow from Layer k+1 to L follows an identical process.*
 
-### Contributions
+> **Abstract:** Pre-trained Vision-Language Models (VLMs) such as CLIP have shown excellent generalization abilities. However, adapting these large-scale models to downstream tasks while preserving their generalization capabilities remains challenging. Although prompt learning methods have shown promise, they suffer from two fundamental bottlenecks that limit generalization: (a) modality isolation, and (b) hierarchical semantic decay. To address these limitations, we propose HiCroPL, a Hierarchical Crossmodal Prompt Learning framework that establishes bidirectional knowledge flow between text and vision modalities, enabling them to refine their semantics mutually. HiCroPL routes knowledge flows by leveraging the complementary strengths of text and vision. In early layers, text prompts inject relatively clear semantics into visual prompts through a hierarchical knowledge mapper, enhancing the representation of low-level visual semantics. In later layers, visual prompts encoding specific task-relevant objects flow back to refine text prompts, enabling deeper alignment. Crucially, our hierarchical knowledge mapper allows representations at multi-scales to be fused, ensuring that deeper representations retain transferable shallow semantics thereby enhancing generalization. We further introduce a lightweight layer-specific knowledge proxy to enable efficient cross-modal interactions. Extensive evaluations across four tasks demonstrate HiCroPL’s superior performance, achieving state-of-the-art results on 11 benchmarks with significant improvements.
+
+## Contributions
 
 • **We propose a novel hierarchical prompt learning framework** that effectively adapts VLMs to downstream tasks while preserving their inherent generalization capability. 
 
@@ -28,7 +28,7 @@ Authors: Hao Zheng, Shunzhi Yang, Zhuoxin He, Jinfeng Yang, Zhenhua Huang
 
 • Comprehensive experiments across 4 tasks and 11 benchmarks validate HiCroPL’s effectiveness and robustness.
 
-### Results on B2N
+## Results on B2N
 
 | Method                                                       | Base  | Novel | HM    |
 | ------------------------------------------------------------ | ----- | ----- | ----- |
@@ -43,7 +43,9 @@ Authors: Hao Zheng, Shunzhi Yang, Zhuoxin He, Jinfeng Yang, Zhenhua Huang
 | [CoPrompt](https://arxiv.org/abs/2306.01195)                 | 84.00 | 77.23 | 80.47 |
 | [HiCroPL](https://arxiv.org/pdf/2507.14976)                  | 85.89 | 77.99 | 81.75 |
 
-### Citation
+------
+
+## Citation
 
 If you find our work helpful for your research, please consider citing the following BibTeX entry.
 
@@ -55,4 +57,8 @@ If you find our work helpful for your research, please consider citing the follo
   year={2025}
 }
 ```
+
+## Acknowledgements
+
+Our code is based on [Co-CoOp, CoOp](https://github.com/KaiyangZhou/CoOp) and [MaPLe](https://github.com/muzairkhattak/multimodal-prompt-learning). We thank the authors for releasing their code. If you use our model and code, please consider citing these works as well.
 
