@@ -60,5 +60,5 @@ If you find our work helpful for your research, please consider citing the follo
 
 ## Acknowledgements
 
-Our code is based on [Co-CoOp, CoOp](https://github.com/KaiyangZhou/CoOp) and [MaPLe](https://github.com/muzairkhattak/multimodal-prompt-learning). We thank the authors for releasing their code. If you use our model and code, please consider citing these works as well.
+Our code is based on [Co-CoOp, CoOp](https://github.com/KaiyangZhou/CoOp) and [MaPLe](https://github.com/muzairkhattak/multimodal-prompt-learning). We thank the authors for releasing their code. If you use our code, please consider citing these works as well.
 
