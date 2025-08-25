@@ -2,7 +2,7 @@
 
 
 # custom config
-DATA=/mnt/petrelfs/zhenghao/code/research/CasPL/DATA
+DATA="/path/to/dataset/folder"
 TRAINER=HiCroPL
 
 DATASET=$1
