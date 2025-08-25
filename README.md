@@ -8,11 +8,11 @@
 
 ## Highlights
 
-![motivation](/Users/zeo/郑浩/论文/ICCV2025/motivation.png)
+![motivation](docs/motivation.png)
 
 *Figure 1. Comparison of HiCroPL with existing prompting approaches. (a) Most existing methods adopt uni-modal adaptation or isolated multi-modal solutions to fine-tune CLIP. (b) Multi-modal Prompt Learning (MaPLe) proposes a one way (i.e. text-to-vision) coupling function to bridge the two modalities, but visual concepts lack pathways to guide textual semantics. (c) HiCroPL introduces a bidirectional knowledge flow mechanism between the two modalities, enabling them to refine their semantics mutually for deep alignment. Besides, the representation used for downstream decisions contains rich intermediate features for improved generalization.*
 
-![framework_final](/Users/zeo/郑浩/论文/ICCV2025/framework_final.png)
+![framework_final](docs/framework_final.png)
 
 *Figure 2. (a) Overview of the proposed HiCroPL framework. (b) Detailed illustration of the Bidirectional Knowledge flow mechanism. From Layer 1 to k, the LKP first initializes layer-specific proxy tokens to encapsulate the key information relevant to the current layer, which then guide visual prompt refinement via the mapper M. The reverse flow from Layer k+1 to L follows an identical process.*
 
